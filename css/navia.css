@@ -1,0 +1,134 @@
+/* ========== 全局滚动条（娜维娅金） ========== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(245, 215, 66, 0.15);
+  border-radius: 2em;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #F5D742, #D4A800);
+  border-radius: 2em;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E6C840;
+}
+::-moz-selection {
+  color: #fff;
+  background: #F5D742;
+}
+
+/* ========== 顶部菜单 ========== */
+#nav .menus_items .menus_item {
+  display: inline;
+  padding: 0.2rem 0.6rem 0.5rem 0.6rem !important;
+  margin: 3px 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(245, 215, 66, 0.15);
+  transition: all 0.3s ease;
+}
+#nav .menus_items .menus_item:hover {
+  background: rgba(245, 215, 66, 0.12);
+  transform: translateY(-2px);
+}
+#nav .menus_items .menus_item .menus_item_child {
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  box-shadow: 0 8px 24px rgba(245, 215, 66, 0.12);
+}
+#nav .menus_items .menus_item .menus_item_child li:hover {
+  border-radius: 10px;
+  background: rgba(245, 215, 66, 0.15);
+}
+
+/* ========== 底部页脚 ========== */
+#footer {
+  background: var(--card-bg);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -4px 20px rgba(245, 215, 66, 0.06);
+}
+#footer-wrap {
+  padding: 16px 0 20px;
+  color: var(--font-color);
+  text-align: center;
+}
+#footer-wrap a {
+  color: #F5D742;
+  transition: color 0.3s;
+}
+#footer-wrap a:hover {
+  color: #D4A800;
+  text-decoration: underline;
+}
+
+/* ========== 首页文章卡片 ========== */
+#recent-posts > .recent-post-item {
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(245, 215, 66, 0.06);
+  transition: all 0.35s ease;
+}
+#recent-posts > .recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(245, 215, 66, 0.12);
+}
+#recent-posts > .recent-post-item .post_cover img.post_bg {
+  border-radius: 24px;
+  padding: 12px;
+  transition: all 0.4s ease;
+}
+#recent-posts > .recent-post-item:hover img.post_bg {
+  transform: scale(0.92);
+}
+#recent-posts > .recent-post-item .recent-post-info .content {
+  opacity: 0;
+  line-height: 0.7;
+  transition: all 0.35s ease;
+}
+#recent-posts > .recent-post-item:hover .recent-post-info .content {
+  opacity: 1;
+  line-height: 2;
+}
+
+/* ========== 侧边栏：分类/归档悬停 ========== */
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover,
+.site-data > a:hover {
+  border-radius: 10px;
+  color: #fff !important;
+  background: linear-gradient(135deg, #F5D742, #E6C840) !important;
+  box-shadow: 0 4px 16px rgba(245, 215, 66, 0.25);
+  padding-left: 12px;
+  transition: all 0.3s ease;
+}
+
+/* ========== 文章目录高亮 ========== */
+#aside-content #card-toc .toc-content .toc-link.active {
+  border-left-color: #F5D742;
+  background: rgba(245, 215, 66, 0.10);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(245, 215, 66, 0.12);
+}
+
+/* ========== 娜维娅装饰元素 ========== */
+/* 文章标题前的装饰 */
+.post-title::before {
+  content: "✦ ";
+  color: #F5D742;
+  font-weight: 300;
+}
+/* 分割线装饰 */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #F5D742, transparent);
+  margin: 2rem 0;
+  opacity: 0.4;
+}
+/* 引用块金色边框 */
+blockquote {
+  border-left: 4px solid #F5D742 !important;
+  background: rgba(245, 215, 66, 0.04);
+  border-radius: 0 8px 8px 0;
+}
