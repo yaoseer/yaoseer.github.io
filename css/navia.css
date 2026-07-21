@@ -1,134 +1,338 @@
-/* ========== 全局滚动条（娜维娅金） ========== */
+/* ============================================================
+   Navia Theme — 优雅 · 黄白金 · 精致
+   设计灵感：原神 · 娜维娅 · 刺玫会
+   ============================================================ */
+
+/* ---------- 1. 色彩系统 ---------- */
+:root {
+  --navia-gold: #F5D742;
+  --navia-gold-light: #FAE68A;
+  --navia-gold-dark: #D4A800;
+  --navia-cream: #FFFBF0;
+  --navia-soft-shadow: rgba(245, 215, 66, 0.08);
+  --navia-glow: rgba(245, 215, 66, 0.15);
+}
+
+/* ---------- 2. 全局滚动条 · 金色细线 ---------- */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(245, 215, 66, 0.15);
-  border-radius: 2em;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #F5D742, #D4A800);
-  border-radius: 2em;
+  background: linear-gradient(180deg, var(--navia-gold-light), var(--navia-gold-dark));
+  border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E6C840;
+  background: var(--navia-gold);
 }
-::-moz-selection {
-  color: #fff;
-  background: #F5D742;
+::selection {
+  background: var(--navia-gold);
+  color: #1a1a1a;
 }
 
-/* ========== 顶部菜单 ========== */
+/* ---------- 3. 导航栏 · 毛玻璃质感 ---------- */
+#nav {
+  backdrop-filter: blur(16px) saturate(1.2);
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-bottom: 1px solid rgba(245, 215, 66, 0.12);
+}
+[data-theme="dark"] #nav {
+  background: rgba(20, 20, 25, 0.78) !important;
+  border-bottom: 1px solid rgba(245, 215, 66, 0.06);
+}
+
 #nav .menus_items .menus_item {
-  display: inline;
-  padding: 0.2rem 0.6rem 0.5rem 0.6rem !important;
-  margin: 3px 8px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(245, 215, 66, 0.15);
-  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.2rem 0.8rem 0.5rem !important;
+  margin: 0 6px;
+  border-radius: 40px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 #nav .menus_items .menus_item:hover {
-  background: rgba(245, 215, 66, 0.12);
-  transform: translateY(-2px);
+  background: rgba(245, 215, 66, 0.10);
+  transform: translateY(-1px);
+}
+/* 导航项下划线 · 金色渐变 */
+#nav .menus_items .menus_item::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--navia-gold-light), var(--navia-gold-dark));
+  border-radius: 4px;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+}
+#nav .menus_items .menus_item:hover::after {
+  width: 60%;
 }
 #nav .menus_items .menus_item .menus_item_child {
-  padding: 8px 10px;
-  border-radius: 14px;
-  background: var(--card-bg);
-  box-shadow: 0 8px 24px rgba(245, 215, 66, 0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(245, 215, 66, 0.06);
+}
+#nav .menus_items .menus_item .menus_item_child li {
+  border-radius: 10px;
+  transition: background 0.25s;
 }
 #nav .menus_items .menus_item .menus_item_child li:hover {
-  border-radius: 10px;
-  background: rgba(245, 215, 66, 0.15);
+  background: rgba(245, 215, 66, 0.10);
 }
 
-/* ========== 底部页脚 ========== */
-#footer {
-  background: var(--card-bg);
-  border-radius: 24px 24px 0 0;
-  box-shadow: 0 -4px 20px rgba(245, 215, 66, 0.06);
+/* ---------- 4. 首页标题区 ---------- */
+#page-header #site-title {
+  font-weight: 600;
+  letter-spacing: 6px;
+  text-shadow: 0 4px 32px rgba(245, 215, 66, 0.10);
 }
-#footer-wrap {
-  padding: 16px 0 20px;
-  color: var(--font-color);
-  text-align: center;
-}
-#footer-wrap a {
-  color: #F5D742;
-  transition: color 0.3s;
-}
-#footer-wrap a:hover {
-  color: #D4A800;
-  text-decoration: underline;
+#page-header #site-subtitle {
+  font-weight: 300;
+  letter-spacing: 4px;
+  opacity: 0.85;
 }
 
-/* ========== 首页文章卡片 ========== */
+/* ---------- 5. 文章卡片 · 精致悬浮 ---------- */
 #recent-posts > .recent-post-item {
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(245, 215, 66, 0.06);
-  transition: all 0.35s ease;
+  border-radius: 28px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.02), 0 8px 32px var(--navia-soft-shadow);
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(245, 215, 66, 0.02);
 }
 #recent-posts > .recent-post-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(245, 215, 66, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px var(--navia-glow), 0 0 0 1px rgba(245, 215, 66, 0.04);
 }
 #recent-posts > .recent-post-item .post_cover img.post_bg {
-  border-radius: 24px;
-  padding: 12px;
-  transition: all 0.4s ease;
+  border-radius: 28px 28px 0 0;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-#recent-posts > .recent-post-item:hover img.post_bg {
-  transform: scale(0.92);
+#recent-posts > .recent-post-item:hover .post_cover img.post_bg {
+  transform: scale(1.02);
 }
+#recent-posts > .recent-post-item .recent-post-info .article-title {
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  transition: color 0.3s;
+}
+#recent-posts > .recent-post-item:hover .recent-post-info .article-title {
+  color: var(--navia-gold-dark);
+}
+/* 文章摘要渐隐效果 */
 #recent-posts > .recent-post-item .recent-post-info .content {
-  opacity: 0;
-  line-height: 0.7;
-  transition: all 0.35s ease;
+  position: relative;
+  max-height: 4.2em;
+  overflow: hidden;
+  line-height: 1.8;
+  color: var(--font-color);
+  opacity: 0.8;
 }
-#recent-posts > .recent-post-item:hover .recent-post-info .content {
-  opacity: 1;
-  line-height: 2;
+#recent-posts > .recent-post-item .recent-post-info .content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background: linear-gradient(180deg, transparent, var(--card-bg));
 }
 
-/* ========== 侧边栏：分类/归档悬停 ========== */
+/* ---------- 6. 文章元信息 ---------- */
+.post-meta .post-meta-item {
+  font-size: 0.85em;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.post-meta .post-meta-item:hover {
+  opacity: 1;
+}
+/* 分类标签 · 金色描边 */
+.article-meta .article-meta__categories .article-meta__categories__link {
+  padding: 2px 14px;
+  border-radius: 40px;
+  border: 1.5px solid var(--navia-gold);
+  color: var(--navia-gold-dark);
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+.article-meta .article-meta__categories .article-meta__categories__link:hover {
+  background: var(--navia-gold);
+  color: #1a1a1a;
+  border-color: var(--navia-gold);
+}
+
+/* ---------- 7. 侧边栏 · 卡片质感 ---------- */
+#aside-content .card-widget {
+  border-radius: 24px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02), 0 4px 24px var(--navia-soft-shadow);
+  border: 1px solid rgba(245, 215, 66, 0.02);
+  transition: box-shadow 0.4s;
+}
+#aside-content .card-widget:hover {
+  box-shadow: 0 8px 32px var(--navia-glow);
+}
+/* 作者卡片头像光环 */
+#aside-content .card-author .avatar-img {
+  border: 3px solid var(--navia-gold);
+  box-shadow: 0 0 0 6px rgba(245, 215, 66, 0.06);
+}
+/* 侧边栏列表悬停 */
 #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover,
 .site-data > a:hover {
-  border-radius: 10px;
-  color: #fff !important;
-  background: linear-gradient(135deg, #F5D742, #E6C840) !important;
-  box-shadow: 0 4px 16px rgba(245, 215, 66, 0.25);
-  padding-left: 12px;
+  border-radius: 12px;
+  background: rgba(245, 215, 66, 0.08) !important;
+  color: var(--navia-gold-dark) !important;
+  padding-left: 16px;
   transition: all 0.3s ease;
 }
 
-/* ========== 文章目录高亮 ========== */
+/* ---------- 8. 文章目录 · 金色高亮 ---------- */
 #aside-content #card-toc .toc-content .toc-link.active {
-  border-left-color: #F5D742;
-  background: rgba(245, 215, 66, 0.10);
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(245, 215, 66, 0.12);
-}
-
-/* ========== 娜维娅装饰元素 ========== */
-/* 文章标题前的装饰 */
-.post-title::before {
-  content: "✦ ";
-  color: #F5D742;
-  font-weight: 300;
-}
-/* 分割线装饰 */
-hr {
-  border: none;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #F5D742, transparent);
-  margin: 2rem 0;
-  opacity: 0.4;
-}
-/* 引用块金色边框 */
-blockquote {
-  border-left: 4px solid #F5D742 !important;
+  border-left: 3px solid var(--navia-gold);
   background: rgba(245, 215, 66, 0.04);
   border-radius: 0 8px 8px 0;
+  padding-left: 16px;
+}
+#aside-content #card-toc .toc-content .toc-link {
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+  padding-left: 12px;
+}
+#aside-content #card-toc .toc-content .toc-link:hover {
+  border-left-color: var(--navia-gold-light);
+  background: rgba(245, 215, 66, 0.02);
+  padding-left: 16px;
+}
+
+/* ---------- 9. 文章内部 ---------- */
+/* 文章标题装饰 */
+.post-title::before {
+  content: "✦ ";
+  color: var(--navia-gold);
+  font-weight: 300;
+  opacity: 0.8;
+}
+/* 正文字体优化 */
+#post .post-content {
+  font-size: 1.05em;
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+}
+/* 引用块 · 金色边框 + 淡金底 */
+#post .post-content blockquote {
+  border-left: 4px solid var(--navia-gold) !important;
+  background: rgba(245, 215, 66, 0.02);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 24px;
+  box-shadow: inset 0 0 40px rgba(245, 215, 66, 0.02);
+}
+/* 分割线 · 金色渐变 */
+#post .post-content hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--navia-gold), var(--navia-gold-dark), var(--navia-gold), transparent);
+  margin: 2.4rem 0;
+  opacity: 0.25;
+  border-radius: 4px;
+}
+/* 链接 · 金色下划线 */
+#post .post-content a {
+  color: var(--navia-gold-dark);
+  text-decoration: none;
+  background: linear-gradient(180deg, transparent 60%, rgba(245, 215, 66, 0.12) 60%);
+  transition: all 0.3s;
+}
+#post .post-content a:hover {
+  background: linear-gradient(180deg, transparent 40%, var(--navia-gold) 40%);
+  color: #1a1a1a;
+}
+/* 代码块 · 更柔和 */
+#post .post-content .highlight {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+/* ---------- 10. 底部 · 金色细线 ---------- */
+#footer {
+  background: var(--card-bg);
+  border-top: 1px solid rgba(245, 215, 66, 0.04);
+  box-shadow: 0 -4px 32px var(--navia-soft-shadow);
+}
+#footer-wrap {
+  padding: 24px 0 20px;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+#footer-wrap a {
+  color: var(--navia-gold-dark);
+  transition: color 0.3s;
+}
+#footer-wrap a:hover {
+  color: var(--navia-gold);
+}
+
+/* ---------- 11. 返回顶部按钮 ---------- */
+#rightside #go-up .go-up {
+  background: var(--navia-gold);
+  color: #1a1a1a;
+  box-shadow: 0 4px 16px rgba(245, 215, 66, 0.15);
+  transition: all 0.3s;
+}
+#rightside #go-up .go-up:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 32px rgba(245, 215, 66, 0.20);
+}
+
+/* ---------- 12. 亮/暗模式适配 ---------- */
+[data-theme="dark"] {
+  --navia-soft-shadow: rgba(245, 215, 66, 0.04);
+  --navia-glow: rgba(245, 215, 66, 0.06);
+}
+[data-theme="dark"] #recent-posts > .recent-post-item {
+  border-color: rgba(245, 215, 66, 0.03);
+}
+[data-theme="dark"] #nav {
+  backdrop-filter: blur(16px) saturate(1.1);
+}
+[data-theme="dark"] #post .post-content blockquote {
+  background: rgba(245, 215, 66, 0.02);
+}
+
+/* ---------- 13. 响应式微调 ---------- */
+@media screen and (max-width: 768px) {
+  #recent-posts > .recent-post-item {
+    border-radius: 20px;
+  }
+  #recent-posts > .recent-post-item .post_cover img.post_bg {
+    border-radius: 20px 20px 0 0;
+  }
+  #aside-content .card-widget {
+    border-radius: 20px;
+  }
+  #post .post-content {
+    font-size: 1em;
+  }
+}
+
+/* ---------- 14. 加载动画 · 金色闪光 ---------- */
+#loading-box .loading-bg {
+  background: linear-gradient(135deg, #FFFBF0, #FAE68A, #F5D742);
+}
+#loading-box .loading-bg .loading-image {
+  animation: naviaPulse 1.6s ease-in-out infinite;
+}
+@keyframes naviaPulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.04); }
 }
