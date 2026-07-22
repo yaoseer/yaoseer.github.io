@@ -1,0 +1,120 @@
+/* ============================================================
+   娜维娅金色 Giscus 自定义主题
+   ============================================================ */
+
+/* ---------- 亮色模式 ---------- */
+main {
+  --giscus-bg: #FFFBF0;
+  --giscus-border-color: #F5D742;
+  --giscus-color-primary: #1a1a1a;
+  --giscus-color-secondary: #858585;
+  --giscus-color-link: #B8A038;
+  --giscus-color-link-hover: #F5D742;
+  --giscus-button-bg: #F5D742;
+  --giscus-button-color: #1a1a1a;
+  --giscus-button-bg-hover: #E6C840;
+  --giscus-button-color-hover: #1a1a1a;
+  --giscus-input-bg: #FFFFFF;
+  --giscus-input-border: #F0EDE0;
+  --giscus-input-border-focus: #F5D742;
+}
+
+/* ---------- 暗色模式 ---------- */
+@media (prefers-color-scheme: dark) {
+  main {
+    --giscus-bg: #1a1a1a;
+    --giscus-border-color: #F5D742;
+    --giscus-color-primary: #f0f0f0;
+    --giscus-color-secondary: #a0a0a0;
+    --giscus-color-link: #FAE68A;
+    --giscus-color-link-hover: #F5D742;
+    --giscus-button-bg: #F5D742;
+    --giscus-button-color: #1a1a1a;
+    --giscus-button-bg-hover: #E6C840;
+    --giscus-button-color-hover: #1a1a1a;
+    --giscus-input-bg: #2a2a2a;
+    --giscus-input-border: #3a3a3a;
+    --giscus-input-border-focus: #F5D742;
+  }
+}
+
+/* ---------- Giscus 容器样式 ---------- */
+.giscus {
+  background: var(--giscus-bg);
+  border-radius: 16px;
+  padding: 20px 24px;
+  border: 1px solid var(--giscus-border-color);
+  box-shadow: 0 4px 20px rgba(245, 215, 66, 0.06);
+}
+
+.giscus .gsc-header {
+  border-bottom: 1px solid rgba(245, 215, 66, 0.12);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.giscus .gsc-tabs {
+  border-bottom: 1px solid rgba(245, 215, 66, 0.08);
+}
+
+.giscus .gsc-tab {
+  color: var(--giscus-color-secondary);
+  transition: color 0.3s;
+}
+
+.giscus .gsc-tab.active {
+  color: var(--giscus-color-primary);
+  border-bottom-color: var(--giscus-border-color);
+}
+
+.giscus .gsc-tab:hover {
+  color: var(--giscus-color-link-hover);
+}
+
+.giscus .gsc-input {
+  border-radius: 12px;
+  border: 1px solid var(--giscus-input-border);
+  background: var(--giscus-input-bg);
+  color: var(--giscus-color-primary);
+  transition: border-color 0.3s;
+}
+
+.giscus .gsc-input:focus {
+  border-color: var(--giscus-input-border-focus);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 215, 66, 0.08);
+}
+
+.giscus .gsc-btn {
+  border-radius: 40px;
+  background: var(--giscus-button-bg);
+  color: var(--giscus-button-color);
+  border: none;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.giscus .gsc-btn:hover {
+  background: var(--giscus-button-bg-hover);
+  color: var(--giscus-button-color-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(245, 215, 66, 0.20);
+}
+
+.giscus .gsc-comment {
+  border-bottom: 1px solid rgba(245, 215, 66, 0.06);
+  padding: 12px 0;
+}
+
+.giscus .gsc-reactions {
+  margin-top: 4px;
+}
+
+/* ---------- 响应式 ---------- */
+@media screen and (max-width: 768px) {
+  .giscus {
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+}

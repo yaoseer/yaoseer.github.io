@@ -1,0 +1,165 @@
+/* ============================================================
+   娜维娅攻略页面样式
+   ============================================================ */
+
+/* ---------- 页面头部 ---------- */
+.guide-header {
+  background: linear-gradient(135deg, #FFFBF0 0%, #FAE68A 30%, #F5D742 100%);
+  border-radius: 28px;
+  padding: 40px 48px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 24px rgba(245, 215, 66, 0.12);
+}
+
+.guide-title-area {
+  text-align: center;
+}
+
+.guide-title {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #1a1a1a;
+  letter-spacing: 4px;
+}
+
+.guide-title::before {
+  content: "";
+}
+
+.guide-subtitle {
+  font-size: 1.1em;
+  color: #4a4a4a;
+  margin: 0 0 12px 0;
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+.guide-meta {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 0.85em;
+  color: #666;
+}
+
+.guide-meta span {
+  background: rgba(255,255,255,0.6);
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+/* ---------- 表格样式 ---------- */
+#post .post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+#post .post-content table thead {
+  background: linear-gradient(135deg, #F5D742, #E6C840);
+  color: #1a1a1a;
+}
+
+#post .post-content table th {
+  padding: 12px 16px;
+  font-weight: 600;
+  text-align: left;
+}
+
+#post .post-content table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(245, 215, 66, 0.10);
+  background: var(--card-bg);
+}
+
+#post .post-content table tr:last-child td {
+  border-bottom: none;
+}
+
+#post .post-content table tr:hover td {
+  background: rgba(245, 215, 66, 0.04);
+}
+
+/* ---------- 引用块优化 ---------- */
+#post .post-content blockquote {
+  border-left: 4px solid #F5D742 !important;
+  background: rgba(245, 215, 66, 0.03);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 24px;
+}
+
+/* ---------- 标题优化 ---------- */
+#post .post-content h2 {
+  font-size: 1.6em;
+  margin-top: 48px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(245, 215, 66, 0.20);
+}
+
+#post .post-content h3 {
+  font-size: 1.25em;
+  margin-top: 32px;
+  color: var(--font-color);
+}
+
+#post .post-content h2::before {
+  content: "✦ ";
+  color: #F5D742;
+  font-weight: 300;
+}
+
+/* ---------- 页脚 ---------- */
+.guide-footer {
+  text-align: center;
+  margin-top: 48px;
+  padding: 32px 0 16px;
+  border-top: 1px solid rgba(245, 215, 66, 0.15);
+}
+
+.guide-footer p {
+  font-size: 1.1em;
+  color: var(--font-color);
+  margin: 0;
+}
+
+.guide-footer-small {
+  font-size: 0.85em !important;
+  color: #999 !important;
+  margin-top: 8px !important;
+}
+
+/* ---------- 响应式 ---------- */
+@media screen and (max-width: 768px) {
+  .guide-header {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .guide-title {
+    font-size: 2em;
+  }
+
+  .guide-subtitle {
+    font-size: 0.9em;
+    letter-spacing: 3px;
+  }
+
+  .guide-meta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  #post .post-content table {
+    font-size: 0.85em;
+  }
+
+  #post .post-content table th,
+  #post .post-content table td {
+    padding: 8px 10px;
+  }
+}
